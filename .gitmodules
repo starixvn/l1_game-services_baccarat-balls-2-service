@@ -1,0 +1,3 @@
+[submodule "types"]
+	path = types
+	url = git@git3.nexdev.net:l1/sc-packages/sc-game-base-type.git
