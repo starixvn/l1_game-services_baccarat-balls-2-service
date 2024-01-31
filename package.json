@@ -29,7 +29,7 @@
     },
     "dependencies": {
         "@rd/numbers-game-probabilities": "^1.4.0",
-        "sc-number-game-base": "1.0.0-beta.10",
+        "sc-number-game-base": "1.0.0-beta.11",
         "tsx": "^4.7.0"
     },
     "devDependencies": {
