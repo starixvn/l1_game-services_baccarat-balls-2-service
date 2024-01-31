@@ -32,6 +32,6 @@ const bets = mongoose.model(
     })
 );
 
-const tmpBets = mongoose.model("baccaratball_bets", new mongoose.Schema(bet));
+const tmpBets = mongoose.model("baccaratball_tmpbets", new mongoose.Schema(bet));
 
 export { bets, tmpBets };
