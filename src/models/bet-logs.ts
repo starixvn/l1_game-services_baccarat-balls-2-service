@@ -1,27 +1,27 @@
 import mongoose from "mongoose";
 
 const Schema = new mongoose.Schema({
-  uid: { type: String, required: true },
-  name: { type: String, required: true },
+    uid: { type: String, required: true },
+    name: { type: String, required: true },
 
-  choice: { type: String },
-  amount: { type: Number, default: 0, required: true },
+    choice: { type: String },
+    amount: { type: Number, default: 0, required: true },
 
-  rebet: { type: Boolean, default: false },
-  clientSentTime: { type: Date },
-  receivedTime: { type: Date },
+    rebet: { type: Boolean, default: false },
+    clientSentTime: { type: Date },
+    receivedTime: { type: Date },
 
-  time: { type: Date },
+    time: { type: Date },
 
-  siteId: { type: String },
+    siteId: { type: String },
 
-  currency: { type: String, required: true },
-  rate: { type: Number, required: true },
+    currency: { type: String, required: true },
+    rate: { type: Number, required: true },
 
-  playerId: { type: Number },
-  operatorId: { type: String, required: true },
-  roundId: { type: Number, default: 0, required: true },
-  drawId: { type: Number, default: 0, required: true },
+    playerId: { type: Number },
+    operatorId: { type: String, required: true },
+    roundId: { type: Number, default: 0, required: true },
+    drawId: { type: Number, default: 0, required: true },
 });
 
-export default mongoose.model("baccaratballs_betlogs", Schema);
+export default mongoose.model("baccaratball_betlogs", Schema);

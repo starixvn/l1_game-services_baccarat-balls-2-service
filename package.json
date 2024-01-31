@@ -1,54 +1,54 @@
 {
-  "name": "baccarat-balls-service",
-  "version": "1.0.0",
-  "description": "",
-  "repository": {
-    "type": "git",
-    "url": "https://git3.nexdev.net/l1/game-services/baccarat-balls-service.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "main": "./build/app.js",
-  "type": "module",
-  "scripts": {
-    "build": "tsc -p .",
-    "test": "jest --testPathPattern=tests/unit-tests/",
-    "test-coverage": "jest --collect-coverage --testPathPattern=tests/unit-tests/",
-    "integration-test": "jest --testPathPattern=tests/integration-tests",
-    "dev": "nodemon --es-module-specifier-resolution=node --watch ./build ./build/app.js",
-    "reg": "npm set registry http://npm.lumigame.com"
-  },
-  "jestSonar": {
-    "reportPath": "reports",
-    "reportFile": "test-reporter.xml",
-    "indent": 4
-  },
-  "jest": {
-    "testResultsProcessor": "jest-junit"
-  },
-  "dependencies": {
-    "@rd/numbers-game-probabilities": "^1.4.0",
-    "sc-game-base": "^5.0.1-beta.0",
-    "sc-number-game-base": "1.0.0-beta.9"
-  },
-  "devDependencies": {
-    "@babel/preset-env": "^7.23.9",
-    "@commitlint/cli": "^18.6.0",
-    "@commitlint/config-conventional": "^18.6.0",
-    "@types/jest": "^29.5.11",
-    "husky": "^9.0.6",
-    "jest": "^29.7.0",
-    "jest-auto-stub": "^1.0.8",
-    "jest-junit": "^16.0.0",
-    "jest-sonar-reporter": "^2.0.0",
-    "nodemon": "^3.0.3",
-    "ts-jest": "^29.1.2",
-    "tsx": "^4.7.0",
-    "typescript": "^5.3.3"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    "name": "baccarat-balls-service",
+    "version": "1.0.0",
+    "description": "",
+    "repository": {
+        "type": "git",
+        "url": "https://git3.nexdev.net/l1/game-services/baccarat-balls-service.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "main": "./build/app.js",
+    "type": "module",
+    "scripts": {
+        "build": "tsc -p .",
+        "test": "jest --testPathPattern=tests/unit-tests/",
+        "test-coverage": "jest --collect-coverage --testPathPattern=tests/unit-tests/",
+        "integration-test": "jest --testPathPattern=tests/integration-tests",
+        "dev": "tsx watch ./src/app.ts",
+        "dev-build": "nodemon --es-module-specifier-resolution=node --watch ./build ./build/app.js",
+        "reg": "npm set registry http://npm.lumigame.com"
+    },
+    "jestSonar": {
+        "reportPath": "reports",
+        "reportFile": "test-reporter.xml",
+        "indent": 4
+    },
+    "jest": {
+        "testResultsProcessor": "jest-junit"
+    },
+    "dependencies": {
+        "@rd/numbers-game-probabilities": "^1.4.0",
+        "sc-number-game-base": "1.0.0-beta.9",
+        "tsx": "^4.7.0"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.23.9",
+        "@commitlint/cli": "^18.6.0",
+        "@commitlint/config-conventional": "^18.6.0",
+        "@types/jest": "^29.5.11",
+        "husky": "^9.0.6",
+        "jest": "^29.7.0",
+        "jest-auto-stub": "^1.0.8",
+        "jest-junit": "^16.0.0",
+        "jest-sonar-reporter": "^2.0.0",
+        "nodemon": "^3.0.3",
+        "ts-jest": "^29.1.2",
+        "typescript": "^5.3.3"
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
     }
-  }
 }

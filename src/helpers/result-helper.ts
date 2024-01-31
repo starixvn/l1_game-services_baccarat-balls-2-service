@@ -1,11 +1,15 @@
 import { NumberWar } from "@rd/numbers-game-probabilities";
 
-export const generateResult = () => {};
+export const generateResult = () => {
+    return { player: 1, banker: 2 };
+};
 
-export const getSettlementResult = () => {};
+export const getSettlementResult = () => {
+    return { player: false, banker: true, tie: false };
+};
 
 export const generateRawResultForHash = () => {};
 
 export const getProbabilities = () => {
-  NumberWar.getProbabilities([], []);
+    return NumberWar.getProbabilities([], []);
 };
