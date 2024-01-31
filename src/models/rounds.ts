@@ -2,33 +2,29 @@ import mongoose from "mongoose";
 
 const modelName = "baccaratball_rounds";
 const resultSchema = new mongoose.Schema(
-    [
-        {
-            drawId: { type: Number },
-            player: { type: Number, required: true },
-            banker: { type: Number, required: true },
-        },
-    ],
+    {
+        drawId: { type: Number },
+        player: { type: Number, required: true },
+        banker: { type: Number, required: true },
+    },
     {
         _id: false,
     }
 );
 const settlementResultSchema = new mongoose.Schema(
-    [
-        {
-            drawId: { type: Number },
-            player: { type: Boolean, default: false },
-            banker: { type: Boolean, default: false },
-            tie: { type: Boolean, default: false },
-        },
-    ],
+    {
+        drawId: { type: Number },
+        player: { type: Boolean, default: false },
+        banker: { type: Boolean, default: false },
+        tie: { type: Boolean, default: false },
+    },
     { _id: false }
 );
 
 const Schema = new mongoose.Schema({
     id: { type: Number, required: true },
-    result: resultSchema,
-    settlementResult: settlementResultSchema,
+    result: { type: [resultSchema] },
+    settlementResult: { type: [settlementResultSchema] },
     time: { type: Date, default: new Date() },
     exchangeRateId: { type: Number, require: true },
     drawId: { type: Number, require: true },
