@@ -3808,6 +3808,11 @@ extend-shallow@^3.0.0, extend-shallow@^3.0.2:
     assign-symbols "^1.0.0"
     is-extendable "^1.0.1"
 
+extensionless@^1.9.6:
+  version "1.9.6"
+  resolved "http://npm.lumigame.com/extensionless/-/extensionless-1.9.6.tgz#250178a90bcd188699b81570039ae5a17c7dd3bd"
+  integrity sha512-40F6zThJu1MxaT1A1pJ/2SHlU1BPYYnQNHt0j2ZlPuxxm2ddMcNc1D7uS/LGc4K3VwMEMaZLkCdHWaKk0LnQXA==
+
 extglob@^2.0.4:
   version "2.0.4"
   resolved "http://npm.lumigame.com/extglob/-/extglob-2.0.4.tgz#ad00fe4dc612a9232e8718711dc5cb5ab0285543"

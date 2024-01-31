@@ -28,6 +28,7 @@ const Schema = new mongoose.Schema({
     time: { type: Date, default: new Date() },
     exchangeRateId: { type: Number, require: true },
     drawId: { type: Number, require: true },
+    ended: { type: Boolean, default: false },
 });
 
 export default mongoose.model(modelName, Schema);
