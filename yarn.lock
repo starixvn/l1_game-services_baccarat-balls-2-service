@@ -2014,10 +2014,10 @@
   resolved "http://npm.lumigame.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@rd/numbers-game-probabilities@^1.4.0":
-  version "1.4.0"
-  resolved "http://npm.lumigame.com/@rd/numbers-game-probabilities/-/numbers-game-probabilities-1.4.0.tgz#5a8318c80b8eeef8f4348f1fca955e95d05f61a8"
-  integrity sha512-GfRyiciPsYroH2o5rwkEynV0/lq2Nhvfaol4nWrJsWxGJCEqwMZdMcKl1dttMIqDAL9U3S6gaGaT0T7PPRiXxg==
+"@rd/numbers-game-probabilities@^1.5.0":
+  version "1.5.0"
+  resolved "http://npm.lumigame.com/@rd/numbers-game-probabilities/-/numbers-game-probabilities-1.5.0.tgz#e486651bb258e3b9eea103a99738b677c74419d4"
+  integrity sha512-SbZ7UlLc4raSNiKP4VQjH4nwaUsi8LJxVVhxW0G4BEWApY/X7g5FAylUJkaJ8gy5FrUmy/Yn4Pia16VsQj/p9A==
   dependencies:
     mathjs "^12.2.1"
 
@@ -6961,10 +6961,10 @@ sc-instrument@1.1.1-beta.2:
     opentelemetry-instrumentation-socket.io "0.34.0"
     socket.io "4.6.1"
 
-sc-number-game-base@1.0.0-beta.11:
-  version "1.0.0-beta.11"
-  resolved "http://npm.lumigame.com/sc-number-game-base/-/sc-number-game-base-1.0.0-beta.11.tgz#41d55b70e6ecaff0413d38e868d5025e0a8aaab5"
-  integrity sha512-n89jP7+RRlHVbwJXgDsQpxIqh6xtngDUQ4NEFcLX7Q8otl22fetX8ZErIijyPKRFIZEBOxkBFhbkNjMBVqCW8g==
+sc-number-game-base@1.0.0-beta.13:
+  version "1.0.0-beta.13"
+  resolved "http://npm.lumigame.com/sc-number-game-base/-/sc-number-game-base-1.0.0-beta.13.tgz#6bb6ee1690d6b87c88ed0288d373abd1ba8aabeb"
+  integrity sha512-lvqMXscbeXP+iVW7JsOS3DhCpdct2TICNn+LjZ7KBZ8rtPpw3hlBKM/pyWuPnNUKBRydP000Y+MNYb65FaqpOA==
   dependencies:
     chance "1.1.6"
     d3-array "3.2.0"

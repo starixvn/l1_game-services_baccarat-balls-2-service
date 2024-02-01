@@ -1,6 +1,6 @@
-import { NumberWar } from "@rd/numbers-game-probabilities";
+import { BacBall } from "@rd/numbers-game-probabilities";
 
-export const generateResult = () => {
+export const generateResult = (mode: number) => {
     return { player: 1, banker: 2 };
 };
 
@@ -10,6 +10,8 @@ export const getSettlementResult = () => {
 
 export const generateRawResultForHash = () => {};
 
-export const getProbabilities = () => {
-    return NumberWar.getProbabilities([], []);
+export const getProbabilities = (roundResult: any[]) => {
+    const player = roundResult.map((drawResult) => Number(drawResult.player));
+    const banker = roundResult.map((drawResult) => Number(drawResult.banker));
+    return BacBall.getProbabilities(player, banker);
 };
