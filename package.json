@@ -30,7 +30,7 @@
     "dependencies": {
         "@rd/numbers-game-probabilities": "^1.5.0",
         "extensionless": "^1.9.6",
-        "sc-number-game-base": "1.0.0-beta.16"
+        "sc-number-game-base": "1.0.0-beta.17"
     },
     "devDependencies": {
         "@babel/preset-env": "^7.23.9",
