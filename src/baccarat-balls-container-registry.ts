@@ -1,7 +1,7 @@
 import { asClass, asValue } from "awilix";
 import { bets, rounds, tmpBets, betLogs } from "./models/index";
 import { ContainerRegistry } from "sc-number-game-base";
-import { InGameConsumer } from "sc-game-base/src/core/event-consumers";
+import { InGameConsumer } from "./event-consumers";
 
 export default class BaccaratContainerRegistry extends ContainerRegistry {
     registerModels() {

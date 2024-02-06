@@ -1,3 +1,3 @@
-import InGameConsumers from "./in-game-consumer";
+import InGameConsumer from "./in-game-consumer";
 
-export { InGameConsumers };
+export { InGameConsumer };
