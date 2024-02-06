@@ -1,12 +1,22 @@
 import { BacBall } from "@rd/numbers-game-probabilities";
 import { DrawResult } from "../models/rounds";
+import { generateRandomNumbers } from "sc-number-game-base/dist/helpers";
+import { randomModes } from "sc-number-game-base/dist/helpers/random-helper";
+import { TOTAL_BALLS } from "../constants";
 
 export const generateResult = (mode: number) => {
-    return { player: 1, banker: 2 };
+    const numberOfPicked = 1;
+    const player = generateRandomNumbers(randomModes, numberOfPicked, TOTAL_BALLS)[0];
+    const banker = generateRandomNumbers(randomModes, numberOfPicked, TOTAL_BALLS)[0];
+    return { player, banker };
 };
 
-export const getSettlementResult = () => {
-    return { player: false, banker: true, tie: false };
+export const getSettlementResult = (result: DrawResult) => {
+    return {
+        player: result.player > result.banker,
+        banker: result.banker > result.player,
+        tie: result.player === result.banker,
+    };
 };
 
 export const generateRawResultForHash = () => {};
