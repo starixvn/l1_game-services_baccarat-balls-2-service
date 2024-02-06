@@ -1,9 +1,15 @@
 import mongoose from "mongoose";
 
 const modelName = "baccaratball_rounds";
-const resultSchema = new mongoose.Schema(
+
+export type DrawResult = {
+    drawId: number;
+    player: number;
+    banker: number;
+};
+const resultSchema = new mongoose.Schema<DrawResult>(
     {
-        drawId: { type: Number },
+        drawId: { type: Number, require: true },
         player: { type: Number, required: true },
         banker: { type: Number, required: true },
     },
@@ -11,9 +17,16 @@ const resultSchema = new mongoose.Schema(
         _id: false,
     }
 );
-const settlementResultSchema = new mongoose.Schema(
+
+export type DrawSettlementResult = {
+    drawId: number;
+    player: boolean;
+    banker: boolean;
+    tie: boolean;
+};
+const settlementResultSchema = new mongoose.Schema<DrawSettlementResult>(
     {
-        drawId: { type: Number },
+        drawId: { type: Number, require: true },
         player: { type: Boolean, default: false },
         banker: { type: Boolean, default: false },
         tie: { type: Boolean, default: false },
