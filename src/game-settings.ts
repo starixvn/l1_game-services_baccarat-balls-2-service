@@ -2,7 +2,7 @@ export default {
     id: 1001,
     name: "BacBall",
     durations: {
-        wholeRound: 132,
+        wholeRound: 134,
         placingBets: 25,
         lockingBet: 3,
         showingResult: 5,
