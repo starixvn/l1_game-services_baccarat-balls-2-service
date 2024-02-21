@@ -6977,10 +6977,10 @@ sc-instrument@1.1.1-beta.2:
     opentelemetry-instrumentation-socket.io "0.34.0"
     socket.io "4.6.1"
 
-sc-number-game-base@1.0.0-beta.25:
-  version "1.0.0-beta.25"
-  resolved "http://npm.lumigame.com/sc-number-game-base/-/sc-number-game-base-1.0.0-beta.25.tgz#071f00be5fd2fa6ae9a62fd367c6c6cbc1796613"
-  integrity sha512-0MKdFYn5+ENLwTJvVKB61VUKqKdjvj1ShcxVHJkMX3xzHytWixY59D7YHLlc7MHpdAn5e5HLGGjRTxRlM32I/A==
+sc-number-game-base@1.0.0-beta.26:
+  version "1.0.0-beta.26"
+  resolved "http://npm.lumigame.com/sc-number-game-base/-/sc-number-game-base-1.0.0-beta.26.tgz#dc3a9e521a622a26282f0f159735241495ef29de"
+  integrity sha512-Cdy9K/3LLJ+S3zgB2XX32gbSI1PhuJ5gx1M+V82RWa0TatTFowQbg8xVGlE1xjcSbNRAFTgC9Ia/WmQmYzhKPA==
   dependencies:
     chance "1.1.6"
     d3-array "3.2.0"
