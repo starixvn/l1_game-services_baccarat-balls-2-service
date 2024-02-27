@@ -1,14 +1,27 @@
 import { BacBall } from "@rd/numbers-game-probabilities";
 import { DrawResult } from "../models/rounds";
-import { generateRandomNumbers } from "sc-number-game-base/dist/helpers";
-import { randomModes } from "sc-number-game-base/dist/helpers/random-helper";
-import { TOTAL_BALLS } from "../constants";
+import { ProvablyFair } from "sc-game-base/src/core/game-data";
 
-export const generateResult = (mode: number) => {
-    const numberOfPicked = 1;
-    const player = generateRandomNumbers(randomModes, numberOfPicked, TOTAL_BALLS)[0];
-    const banker = generateRandomNumbers(randomModes, numberOfPicked, TOTAL_BALLS)[0];
-    return { player, banker };
+export const generateResult = (finalSeeds: ProvablyFair) => {
+    const serverSeed = JSON.parse(finalSeeds.serverSeed);
+
+    const [playerRemainingBalls, bankerRemainingBalls] = serverSeed.remain.split(";");
+    const playerBalls = playerRemainingBalls.split(":").map((x: string) => Number(x));
+    const bankerBalls = bankerRemainingBalls.split(":").map((x: string) => Number(x));
+
+    const [playerRandom, bankerRandom] = serverSeed.random.split(";").map((x: string) => Number(x));
+    const sumClientSeeds = finalSeeds.clientSeeds.reduce(
+        (sumClientSeeds, clientSeed) => sumClientSeeds + Number(Object.values(clientSeed)[0]),
+        0
+    );
+
+    const totalRemainingBalls = playerBalls.length;
+
+    const playerIndex = (playerRandom + sumClientSeeds) % totalRemainingBalls;
+
+    const bankerIndex = (bankerRandom + sumClientSeeds) % totalRemainingBalls;
+
+    return { player: playerBalls[playerIndex], banker: bankerBalls[bankerIndex] };
 };
 
 export const getSettlementResult = (result: DrawResult) => {
@@ -18,8 +31,6 @@ export const getSettlementResult = (result: DrawResult) => {
         tie: result.player === result.banker,
     };
 };
-
-export const generateRawResultForHash = () => {};
 
 export const getProbabilities = (roundResult: DrawResult[]) => {
     // const player = roundResult.map((drawResult) => +drawResult.player);
