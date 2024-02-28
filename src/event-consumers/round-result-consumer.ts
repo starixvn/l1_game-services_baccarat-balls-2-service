@@ -17,15 +17,18 @@ export default class RoundResultConsumer extends BaseEventConsumers.RoundResultC
 
     generateSeverSeed() {
         const { randomMode } = this.gameData.gameConfigs;
-        const { gameState } = this.gameData;
-        const totalDrawnBalls: number = gameState.player?.length ?? 0;
+        const { roundResult } = this.gameData;
+        const totalDrawnBalls: number = roundResult.length ?? 0;
         const totalRemainingBalls = TOTAL_BALLS - totalDrawnBalls;
+
+        const playerDrawn: number[] = roundResult.map((res: { player: any }) => Number(res.player));
+        const bankerDrawn: number[] = roundResult.map((res: { banker: any }) => Number(res.banker));
 
         const playerRandom = getRandomIndex(randomMode, totalRemainingBalls);
         const bankerRandom = getRandomIndex(randomMode, totalRemainingBalls);
 
-        const playerRemainingBalls = generateRemainingBalls(TOTAL_BALLS, gameState.player).join(":");
-        const bankerRemainingBalls = generateRemainingBalls(TOTAL_BALLS, gameState.banker).join(":");
+        const playerRemainingBalls = generateRemainingBalls(TOTAL_BALLS, playerDrawn).join(":");
+        const bankerRemainingBalls = generateRemainingBalls(TOTAL_BALLS, bankerDrawn).join(":");
 
         const serverSeedSecret = ServerSeedHelper.generateServerSeed(randomMode, SERVER_SEED_SECRET_LENGTH);
 
