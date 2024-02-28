@@ -1,5 +1,5 @@
 import { ProvablyFair } from "sc-game-base/src/core/game-data";
-import { generateResult } from "../../src/helpers/result-helper";
+import { generateResult } from "../../../src/helpers/result-helper";
 import { ServerSeedHelper } from "sc-game-base/src/core/helpers";
 
 describe("GenerateResult tests", () => {

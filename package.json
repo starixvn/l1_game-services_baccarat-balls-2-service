@@ -24,9 +24,6 @@
         "reportFile": "test-reporter.xml",
         "indent": 4
     },
-    "jest": {
-        "testResultsProcessor": "jest-junit"
-    },
     "dependencies": {
         "@rd/numbers-game-probabilities": "^1.5.0",
         "extensionless": "^1.9.6",
