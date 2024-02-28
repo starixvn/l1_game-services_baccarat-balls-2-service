@@ -35,3 +35,5 @@ export const getProbabilities = (roundResult: DrawResult[]) => {
     const banker = roundResult.map((drawResult) => +drawResult.banker);
     return BacBall.getProbabilities(player, banker);
 };
+
+export const generateRawResultForHash = () => {};
