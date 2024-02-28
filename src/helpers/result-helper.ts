@@ -6,10 +6,10 @@ export const generateResult = (finalSeeds: ProvablyFair) => {
     const serverSeed = JSON.parse(finalSeeds.serverSeed);
 
     const [playerRemainingBalls, bankerRemainingBalls] = serverSeed.remain.split(";");
-    const playerBalls = playerRemainingBalls.split(":").map((x: string) => Number(x));
-    const bankerBalls = bankerRemainingBalls.split(":").map((x: string) => Number(x));
+    const playerBalls = playerRemainingBalls.split(":").map((x: string) => +x);
+    const bankerBalls = bankerRemainingBalls.split(":").map((x: string) => +x);
 
-    const [playerRandom, bankerRandom] = serverSeed.random.split(";").map((x: string) => Number(x));
+    const [playerRandom, bankerRandom] = serverSeed.random.split(";").map((x: string) => +x);
 
     const sumClientSeeds = finalSeeds.clientSeeds.reduce((sumClientSeeds, clientSeed) => sumClientSeeds + Number(clientSeed.clientSeed), 0);
 
@@ -31,8 +31,7 @@ export const getSettlementResult = (result: DrawResult) => {
 };
 
 export const getProbabilities = (roundResult: DrawResult[]) => {
-    // const player = roundResult.map((drawResult) => +drawResult.player);
-    // const banker = roundResult.map((drawResult) => +drawResult.banker);
-    // return BacBall.getProbabilities(player, banker);
-    return BacBall.getProbabilities([], []);
+    const player = roundResult.map((drawResult) => +drawResult.player);
+    const banker = roundResult.map((drawResult) => +drawResult.banker);
+    return BacBall.getProbabilities(player, banker);
 };

@@ -2,6 +2,7 @@ import BaseEventConsumers from "sc-number-game-base/dist/event-consumers";
 import { SeedHelper, ServerSeedHelper } from "sc-game-base/src/core/helpers";
 import { SERVER_SEED_SECRET_LENGTH, TOTAL_BALLS } from "../constants";
 import { generateRemainingBalls, getRandomIndex } from "sc-number-game-base/dist/helpers";
+import { DrawResult } from "../models/rounds";
 
 export default class RoundResultConsumer extends BaseEventConsumers.RoundResultConsumer {
     async generateServerSeedAndPublishHash() {
@@ -21,8 +22,8 @@ export default class RoundResultConsumer extends BaseEventConsumers.RoundResultC
         const totalDrawnBalls: number = roundResult.length ?? 0;
         const totalRemainingBalls = TOTAL_BALLS - totalDrawnBalls;
 
-        const playerDrawn: number[] = roundResult.map((res: { player: any }) => Number(res.player));
-        const bankerDrawn: number[] = roundResult.map((res: { banker: any }) => Number(res.banker));
+        const playerDrawn = (roundResult as DrawResult[]).map((res) => +res.player);
+        const bankerDrawn = (roundResult as DrawResult[]).map((res) => +res.banker);
 
         const playerRandom = getRandomIndex(randomMode, totalRemainingBalls);
         const bankerRandom = getRandomIndex(randomMode, totalRemainingBalls);
