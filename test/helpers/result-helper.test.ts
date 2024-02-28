@@ -18,7 +18,13 @@ describe("GenerateResult tests", () => {
         const finalSeeds = {
             serverSeed: serverSeed,
             serverSeedHash: "",
-            clientSeeds: [{ player1: "1" }, { player2: "2" }, { player3: "3" }, { player4: "4" }, { player5: "5" }],
+            clientSeeds: [
+                { name: "player1", clientSeed: "1" },
+                { name: "player2", clientSeed: "2" },
+                { name: "player3", clientSeed: "3" },
+                { name: "player4", clientSeed: "4" },
+                { name: "player5", clientSeed: "5" },
+            ],
             mergeClientSeed: "",
             mergeSeed: "",
             finalHash: "",

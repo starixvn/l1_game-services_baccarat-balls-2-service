@@ -10,10 +10,8 @@ export const generateResult = (finalSeeds: ProvablyFair) => {
     const bankerBalls = bankerRemainingBalls.split(":").map((x: string) => Number(x));
 
     const [playerRandom, bankerRandom] = serverSeed.random.split(";").map((x: string) => Number(x));
-    const sumClientSeeds = finalSeeds.clientSeeds.reduce(
-        (sumClientSeeds, clientSeed) => sumClientSeeds + Number(Object.values(clientSeed)[0]),
-        0
-    );
+
+    const sumClientSeeds = finalSeeds.clientSeeds.reduce((sumClientSeeds, clientSeed) => sumClientSeeds + Number(clientSeed.clientSeed), 0);
 
     const totalRemainingBalls = playerBalls.length;
 
