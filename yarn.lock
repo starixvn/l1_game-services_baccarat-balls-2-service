@@ -6944,10 +6944,10 @@ sc-common@1.8.1:
     mongoose-long "^0.3.0"
     numeral "^2.0.6"
 
-sc-game-base@5.0.1-beta.3:
-  version "5.0.1-beta.3"
-  resolved "http://npm.lumigame.com/sc-game-base/-/sc-game-base-5.0.1-beta.3.tgz#f80ecfe18cbcb9a3c42653c0038ff1785b20dba6"
-  integrity sha512-HBK50Ud/L+ZABn44eAjPDMsY/LVCItO2HUUB+SsV9uQuS+jlwg6LwRKMAtFIyIKoRw9VnVPkbANnBC0dbYjMFw==
+sc-game-base@5.0.1-beta.4:
+  version "5.0.1-beta.4"
+  resolved "http://npm.lumigame.com/sc-game-base/-/sc-game-base-5.0.1-beta.4.tgz#bd0598decc3a76e9b2c7810c849cbf508401844c"
+  integrity sha512-Tlxz+1sLCI1NVD5i2ica5Xh7vPp3iOdEGVopQ3RkChSz6gK+7TICUE0FkN8vWhDluMifeQ7X5HJWaDYuSZ2A8g==
   dependencies:
     awilix "^8.0.0"
     axios "^1.0.0"
@@ -7012,10 +7012,10 @@ sc-instrument@1.1.1-beta.2:
     opentelemetry-instrumentation-socket.io "0.34.0"
     socket.io "4.6.1"
 
-sc-number-game-base@1.0.0-beta.35:
-  version "1.0.0-beta.35"
-  resolved "http://npm.lumigame.com/sc-number-game-base/-/sc-number-game-base-1.0.0-beta.35.tgz#ae6015ee6e9a873565bdc41476d8bbd94bada7cd"
-  integrity sha512-5HI9vmjNCkkGk8/NMFkKYj9S9uvtYlH4u/vfFyBu8n4qxh7q+ElQzZbHVWgJgD1RUyldqkPXBU4Rii8h4sFlJw==
+sc-number-game-base@1.0.0-beta.36:
+  version "1.0.0-beta.36"
+  resolved "http://npm.lumigame.com/sc-number-game-base/-/sc-number-game-base-1.0.0-beta.36.tgz#cd61229c9a21d101169356951d69e107c4c10e71"
+  integrity sha512-hUHfE1ZYG8FDSHnG0XUiuOkqY2DygBs2O2LeOWx4YQi+/Ti3/G/NWA87VAh3Rr66SwuZkXgdSykJd8JFDE2Ecw==
   dependencies:
     chance "1.1.6"
     crypto "^1.0.1"
@@ -7026,7 +7026,7 @@ sc-number-game-base@1.0.0-beta.35:
     random-js "^2.1.0"
     randomstring "^1.3.0"
     sc-common "1.8.1"
-    sc-game-base "5.0.1-beta.3"
+    sc-game-base "5.0.1-beta.4"
     socket.io-prom-metrics "1.0.3"
 
 sc-pf-client-seed@^1.0.1-beta.0:
