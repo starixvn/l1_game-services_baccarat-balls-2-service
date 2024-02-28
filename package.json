@@ -11,7 +11,7 @@
     "main": "./build/app.js",
     "type": "module",
     "scripts": {
-        "build": "tsc -p .",
+        "build": "tsc -p tsconfig.build.json",
         "test": "jest --testPathPattern=tests/unit-tests/",
         "test-coverage": "jest --collect-coverage --testPathPattern=tests/unit-tests/",
         "integration-test": "jest --testPathPattern=tests/integration-tests",
