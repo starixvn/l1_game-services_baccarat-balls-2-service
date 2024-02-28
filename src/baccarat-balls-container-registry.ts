@@ -1,8 +1,9 @@
-import { AwilixContainer, asClass, asValue } from "awilix";
+import { asClass, asValue } from "awilix";
 import { bets, rounds, tmpBets, betLogs } from "./models/index";
 import { ContainerRegistry } from "sc-number-game-base";
 import { InGameConsumer, RoundResultConsumer } from "./event-consumers";
 import { GameDefinition, GameData } from "sc-game-base/src/core";
+import { Results } from "sc-number-game-base/dist/models";
 
 export default class BaccaratContainerRegistry extends ContainerRegistry {
     register(appConfigs: any, definition: GameDefinition, gameData: GameData) {
@@ -22,6 +23,7 @@ export default class BaccaratContainerRegistry extends ContainerRegistry {
             betsRepository: asValue(bets),
             tempBetsRepository: asValue(tmpBets),
             betLogsRepository: asValue(betLogs),
+            resultsRepository: asValue(Results),
         });
     }
 
