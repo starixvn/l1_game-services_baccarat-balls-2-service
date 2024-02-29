@@ -13,6 +13,7 @@ const bet = {
     odds: { type: Object },
     totalAmount: { type: Number, default: 0 },
 
+    clientSeed: { type: String, default: "" },
     siteId: { type: String },
     freeBet: { type: Boolean, default: false },
 

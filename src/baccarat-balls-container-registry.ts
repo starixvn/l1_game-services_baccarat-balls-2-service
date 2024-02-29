@@ -3,6 +3,7 @@ import { bets, rounds, tmpBets, betLogs, results } from "./models/index";
 import { ContainerRegistry } from "sc-number-game-base";
 import { InGameConsumer, RoundResultConsumer } from "./event-consumers";
 import { GameDefinition, GameData } from "sc-game-base/src/core";
+import GameCron from "./cron/game-cron";
 
 export default class BaccaratContainerRegistry extends ContainerRegistry {
     register(appConfigs: any, definition: GameDefinition, gameData: GameData) {
@@ -31,6 +32,13 @@ export default class BaccaratContainerRegistry extends ContainerRegistry {
         this.container.register({
             inGameConsumer: asClass(InGameConsumer).singleton(),
             roundResultConsumer: asClass(RoundResultConsumer).singleton(),
+        });
+    }
+
+    registerCrons() {
+        super.registerCrons();
+        this.container.register({
+            gameCron: asClass(GameCron).singleton().proxy(),
         });
     }
 }

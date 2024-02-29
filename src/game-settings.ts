@@ -13,5 +13,5 @@ export default {
     choicesMapper: { player: 1, banker: 2, tie: 3 },
     hedgeBetGroups: [["player", "banker"]],
     numberOfTurnsPerRound: 4,
-    numberOfRoundHistory: 120,
+    numberOfRoundHistory: 108,
 };
