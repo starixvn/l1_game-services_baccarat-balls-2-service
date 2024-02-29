@@ -11,7 +11,7 @@ export default class GameCron extends Crons.GameCron {
 
     async proceed() {
         try {
-            await this.proceed();
+            await super.proceed();
         } catch (e) {
             console.log(e);
         }
