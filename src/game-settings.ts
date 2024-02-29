@@ -14,4 +14,5 @@ export default {
     hedgeBetGroups: [["player", "banker"]],
     numberOfTurnsPerRound: 4,
     numberOfRoundHistory: 108,
+    provablyFair: true,
 };

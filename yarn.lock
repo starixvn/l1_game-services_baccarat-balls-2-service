@@ -7012,10 +7012,10 @@ sc-instrument@1.1.1-beta.2:
     opentelemetry-instrumentation-socket.io "0.34.0"
     socket.io "4.6.1"
 
-sc-number-game-base@1.0.0-beta.39:
-  version "1.0.0-beta.39"
-  resolved "http://npm.lumigame.com/sc-number-game-base/-/sc-number-game-base-1.0.0-beta.39.tgz#691189000319f0823cdf042c8fd86f5ec0bfe7d7"
-  integrity sha512-mv+baT+SzpygUBo/5zAfwO3D2xFLZxMEfMPKQvPmDxIw6yI/89SwLe8qnD0+ix9xa3rSAxRZ4hjJApcBxAQscw==
+sc-number-game-base@1.0.0-beta.40:
+  version "1.0.0-beta.40"
+  resolved "http://npm.lumigame.com/sc-number-game-base/-/sc-number-game-base-1.0.0-beta.40.tgz#c6341519a25bbfadd93d2850570e43205389c5cb"
+  integrity sha512-whLvWRwVJonelrtKWCkXmjzv4xbp4SRb8ST0q4Fzu1kAn3YJosjI2epfLO72TsEFRr920WDHu51ve4HFVgRnuQ==
   dependencies:
     chance "1.1.6"
     crypto "^1.0.1"
@@ -7027,9 +7027,10 @@ sc-number-game-base@1.0.0-beta.39:
     randomstring "^1.3.0"
     sc-common "1.8.1"
     sc-game-base "5.0.1-beta.4"
+    sc-pf-client-seed "1.0.1-beta.0"
     socket.io-prom-metrics "1.0.3"
 
-sc-pf-client-seed@^1.0.1-beta.0:
+sc-pf-client-seed@1.0.1-beta.0, sc-pf-client-seed@^1.0.1-beta.0:
   version "1.0.1-beta.0"
   resolved "http://npm.lumigame.com/sc-pf-client-seed/-/sc-pf-client-seed-1.0.1-beta.0.tgz#31fbba5f6f3742cf04e26f73621fb3758f951e88"
   integrity sha512-LzkOATrCNX6l9KJKRcDRynDdoHP8McppYS7TR10RHn6ewUhM8iwIYxEQwpeYsQQw7l19R1l93uqq1Zez5V/nFg==

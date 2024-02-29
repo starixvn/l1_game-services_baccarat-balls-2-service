@@ -5,7 +5,7 @@ const balls = [...Array(76).keys()].slice(1);
 const counts = new Array(75).fill(0);
 
 for (let i = 0; i < 1000000; i++) {
-    let ball = getRandomNumberFromArray(1, balls);
+    const ball = getRandomNumberFromArray(1, balls);
     counts[ball - 1]++;
 }
 
