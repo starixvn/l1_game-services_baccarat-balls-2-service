@@ -3,23 +3,32 @@ import { DrawResult } from "../models/rounds";
 import { ProvablyFair } from "sc-game-base/src/core/game-data";
 
 export const generateResult = (finalSeeds: ProvablyFair) => {
-    const serverSeed = JSON.parse(finalSeeds.serverSeed);
+    try {
+        const serverSeed = JSON.parse(finalSeeds.serverSeed);
 
-    const [playerRemainingBalls, bankerRemainingBalls] = serverSeed.remain.split(";");
-    const playerBalls = playerRemainingBalls.split(":").map((x: string) => +x);
-    const bankerBalls = bankerRemainingBalls.split(":").map((x: string) => +x);
+        const [playerRemainingBalls, bankerRemainingBalls] = serverSeed.remain.split(";");
+        const playerBalls = playerRemainingBalls.split(":").map((x: string) => +x);
+        const bankerBalls = bankerRemainingBalls.split(":").map((x: string) => +x);
 
-    const [playerRandom, bankerRandom] = serverSeed.random.split(";").map((x: string) => +x);
+        const [playerRandom, bankerRandom] = serverSeed.random.split(";").map((x: string) => +x);
 
-    const sumClientSeeds = finalSeeds.clientSeeds.reduce((sumClientSeeds, clientSeed) => sumClientSeeds + Number(clientSeed.clientSeed), 0);
+        const sumClientSeeds = finalSeeds.clientSeeds.reduce(
+            (sumClientSeeds, clientSeed) => sumClientSeeds + Number(clientSeed.clientSeed),
+            0
+        );
 
-    const totalRemainingBalls = playerBalls.length;
+        const totalRemainingBalls = playerBalls.length;
 
-    const playerIndex = (playerRandom + sumClientSeeds) % totalRemainingBalls;
+        const playerIndex = (playerRandom + sumClientSeeds) % totalRemainingBalls;
 
-    const bankerIndex = (bankerRandom + sumClientSeeds) % totalRemainingBalls;
+        const bankerIndex = (bankerRandom + sumClientSeeds) % totalRemainingBalls;
 
-    return { player: playerBalls[playerIndex], banker: bankerBalls[bankerIndex] };
+        return { player: playerBalls[playerIndex], banker: bankerBalls[bankerIndex] };
+    } catch (err) {
+        console.log(finalSeeds);
+
+        console.error(err);
+    }
 };
 
 export const getSettlementResult = (result: DrawResult) => {
