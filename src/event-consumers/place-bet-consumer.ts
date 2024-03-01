@@ -1,5 +1,4 @@
-import { helpers } from "sc-common";
-import { EventConsumers, GameData, GameDefinition } from "sc-number-game-base";
+import { EventConsumers } from "sc-number-game-base";
 
 export default class PlaceBetConsumer extends EventConsumers.PlaceBetConsumer {
     validateClientSeed(_: any) {
