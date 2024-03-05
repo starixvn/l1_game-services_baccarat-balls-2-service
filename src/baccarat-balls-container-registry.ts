@@ -1,7 +1,7 @@
 import { asClass, asValue } from "awilix";
 import { bets, rounds, tmpBets, betLogs, results } from "./models/index";
 import { ContainerRegistry } from "sc-number-game-base";
-import { InGameConsumer, PlaceBetConsumer, RoundResultConsumer } from "./event-consumers";
+import { InGameConsumer, PlaceBetConsumer, RoundResultConsumer, SettleGameRoundConsumer } from "./event-consumers";
 import { GameDefinition, GameData } from "sc-game-base/src/core";
 
 export default class BaccaratBallsContainerRegistry extends ContainerRegistry {
@@ -32,6 +32,7 @@ export default class BaccaratBallsContainerRegistry extends ContainerRegistry {
             inGameConsumer: asClass(InGameConsumer).singleton(),
             placeBetConsumer: asClass(PlaceBetConsumer).singleton(),
             roundResultConsumer: asClass(RoundResultConsumer).singleton(),
+            settleGameRoundConsumer: asClass(SettleGameRoundConsumer).singleton().proxy(),
         });
     }
 }
