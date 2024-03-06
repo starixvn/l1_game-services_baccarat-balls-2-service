@@ -25,7 +25,7 @@ const bet = {
 };
 
 const bets = mongoose.model(
-    "baccaratball_bets",
+    "bacball_bets",
     new mongoose.Schema({
         ...bet,
         currency: { type: String },
@@ -33,6 +33,6 @@ const bets = mongoose.model(
     })
 );
 
-const tmpBets = mongoose.model("baccaratball_tmpbets", new mongoose.Schema(bet));
+const tmpBets = mongoose.model("bacball_tmpbets", new mongoose.Schema(bet));
 
 export { bets, tmpBets };
