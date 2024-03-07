@@ -1,13 +1,13 @@
 import { EventConsumers } from "sc-number-game-base";
-import { CHOICE_NAMES } from "../constants";
+import { BET_CHOICES } from "../constants";
 
 export default class SettleGameRoundConsumer extends EventConsumers.SettleGameRoundConsumer {
     calculateBetResult(settlementResult: any, bet: any, odds: Record<string, number>) {
         const betResult = Object.entries(settlementResult).reduce(
             (result, [choice, win]) => {
-                if (choice === CHOICE_NAMES.tie && win) {
-                    const bankerBet = bet[CHOICE_NAMES.banker] ?? 0;
-                    const playerBet = bet[CHOICE_NAMES.player] ?? 0;
+                if (choice === BET_CHOICES.tie && win) {
+                    const bankerBet = bet[BET_CHOICES.banker] ?? 0;
+                    const playerBet = bet[BET_CHOICES.player] ?? 0;
                     const refund = bankerBet + playerBet;
 
                     result.totalWin += refund;

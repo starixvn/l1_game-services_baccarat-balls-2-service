@@ -3,6 +3,7 @@ import { bets, rounds, tmpBets, betLogs, results } from "./models/index";
 import { ContainerRegistry } from "sc-number-game-base";
 import { InGameConsumer, PlaceBetConsumer, RoundResultConsumer, SettleGameRoundConsumer } from "./event-consumers";
 import { GameDefinition, GameData } from "sc-game-base/src/core";
+import RunningRoundInfoPublisher from "./event-publishers/running-round-info-publisher";
 
 export default class BaccaratBallsContainerRegistry extends ContainerRegistry {
     register(appConfigs: any, definition: GameDefinition, gameData: GameData) {
@@ -33,6 +34,14 @@ export default class BaccaratBallsContainerRegistry extends ContainerRegistry {
             placeBetConsumer: asClass(PlaceBetConsumer).singleton(),
             roundResultConsumer: asClass(RoundResultConsumer).singleton(),
             settleGameRoundConsumer: asClass(SettleGameRoundConsumer).singleton().proxy(),
+        });
+    }
+
+    registerPublishers() {
+        super.registerPublishers();
+
+        this.container.register({
+            runningRoundInfoPublisher: asClass(RunningRoundInfoPublisher).singleton(),
         });
     }
 }
