@@ -4,6 +4,7 @@ import { ContainerRegistry } from "sc-number-game-base";
 import { InGameConsumer, PlaceBetConsumer, RoundResultConsumer, SettleGameRoundConsumer } from "./event-consumers";
 import { GameDefinition, GameData } from "sc-game-base/src/core";
 import RunningRoundInfoPublisher from "./event-publishers/running-round-info-publisher";
+import Bot from "./crons/bot";
 
 export default class BaccaratBallsContainerRegistry extends ContainerRegistry {
     register(appConfigs: any, definition: GameDefinition, gameData: GameData) {
@@ -42,6 +43,13 @@ export default class BaccaratBallsContainerRegistry extends ContainerRegistry {
 
         this.container.register({
             runningRoundInfoPublisher: asClass(RunningRoundInfoPublisher).singleton(),
+        });
+    }
+
+    registerCrons() {
+        super.registerCrons();
+        this.container.register({
+            bot: asClass(Bot).singleton(),
         });
     }
 }
