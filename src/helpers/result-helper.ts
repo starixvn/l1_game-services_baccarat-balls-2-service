@@ -1,8 +1,12 @@
 import { BacBall } from "@rd/numbers-game-probabilities";
 import { DrawResult } from "../models/rounds";
-import { ProvablyFair } from "sc-game-base/src/core/game-data";
 
-export const generateResult = (finalSeeds: ProvablyFair) => {
+export type FinalSeeds = {
+    serverSeed: string;
+    finalHash: string;
+};
+
+export const generateResult = (finalSeeds: FinalSeeds) => {
     const serverSeed = JSON.parse(finalSeeds.serverSeed);
 
     const [playerRemainingBalls, bankerRemainingBalls] = serverSeed.remain.split(";");
@@ -11,15 +15,19 @@ export const generateResult = (finalSeeds: ProvablyFair) => {
 
     const [playerRandom, bankerRandom] = serverSeed.random.split(";").map((x: string) => +x);
 
-    const sumClientSeeds = finalSeeds.clientSeeds.reduce((sumClientSeeds, clientSeed) => sumClientSeeds + Number(clientSeed.clientSeed), 0);
+    const increment = finalHashToNumber(finalSeeds.finalHash);
 
     const totalRemainingBalls = playerBalls.length;
 
-    const playerIndex = (playerRandom + sumClientSeeds) % totalRemainingBalls;
+    const playerIndex = (playerRandom + increment) % totalRemainingBalls;
 
-    const bankerIndex = (bankerRandom + sumClientSeeds) % totalRemainingBalls;
+    const bankerIndex = (bankerRandom + increment) % totalRemainingBalls;
 
     return { player: playerBalls[playerIndex], banker: bankerBalls[bankerIndex] };
+};
+
+export const finalHashToNumber = (finalHash: string) => {
+    return parseInt(finalHash.slice(0, 2), 16);
 };
 
 export const getSettlementResult = (result: DrawResult) => {

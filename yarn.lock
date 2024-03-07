@@ -3528,6 +3528,17 @@ end-of-stream@^1.1.0:
   dependencies:
     once "^1.4.0"
 
+engine.io-client@~6.5.2:
+  version "6.5.3"
+  resolved "http://npm.lumigame.com/engine.io-client/-/engine.io-client-6.5.3.tgz#4cf6fa24845029b238f83c628916d9149c399bc5"
+  integrity sha512-9Z0qLB0NIisTRt1DZ/8U2k12RJn8yls/nXMZLn+/N8hANT3TcYjKFKcwbw5zFQiN4NTde3TSY9zb79e1ij6j9Q==
+  dependencies:
+    "@socket.io/component-emitter" "~3.1.0"
+    debug "~4.3.1"
+    engine.io-parser "~5.2.1"
+    ws "~8.11.0"
+    xmlhttprequest-ssl "~2.0.0"
+
 engine.io-parser@~5.0.3:
   version "5.0.7"
   resolved "http://npm.lumigame.com/engine.io-parser/-/engine.io-parser-5.0.7.tgz#ed5eae76c71f398284c578ab6deafd3ba7e4e4f6"
@@ -5467,6 +5478,11 @@ json-schema-traverse@^1.0.0:
   resolved "http://npm.lumigame.com/json-schema-traverse/-/json-schema-traverse-1.0.0.tgz#ae7bcb3656ab77a73ba5c49bf654f38e6b6860e2"
   integrity sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug==
 
+json-stringify-safe@^5.0.1:
+  version "5.0.1"
+  resolved "http://npm.lumigame.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
+  integrity sha1-Epai1Y/UXxmg9s4B1lcB4sc1tus=
+
 json5@2.x, json5@^2.2.3:
   version "2.2.3"
   resolved "http://npm.lumigame.com/json5/-/json5-2.2.3.tgz#78cd6f1a19bdc12b73db5ad0c61efd66c1e29283"
@@ -5638,6 +5654,11 @@ lodash.kebabcase@^4.1.1:
   version "4.1.1"
   resolved "http://npm.lumigame.com/lodash.kebabcase/-/lodash.kebabcase-4.1.1.tgz#8489b1cb0d29ff88195cceca448ff6d6cc295c36"
   integrity sha1-hImxyw0p/4gZXM7KRI/21swpXDY=
+
+lodash.matches@^4.6.0:
+  version "4.6.0"
+  resolved "http://npm.lumigame.com/lodash.matches/-/lodash.matches-4.6.0.tgz#ae1affba8047f02368905fe585376bd2c10aaf5e"
+  integrity sha1-rhr/uoBH8CNokF/lhTdr0sEKr14=
 
 lodash.memoize@4.x:
   version "4.1.2"
@@ -6084,6 +6105,15 @@ no-case@^3.0.4:
     lower-case "^2.0.2"
     tslib "^2.0.3"
 
+nock@^13.2.1:
+  version "13.5.4"
+  resolved "http://npm.lumigame.com/nock/-/nock-13.5.4.tgz#8918f0addc70a63736170fef7106a9721e0dc479"
+  integrity sha512-yAyTfdeNJGGBFxWdzSKCBYxs5FxLbCg5X5Q4ets974hcQzG1+qCxvIyOo4j2Ry6MUlhWVMX4OoYDefAIIwupjw==
+  dependencies:
+    debug "^4.1.0"
+    json-stringify-safe "^5.0.1"
+    propagate "^2.0.0"
+
 node-int64@^0.4.0:
   version "0.4.0"
   resolved "http://npm.lumigame.com/node-int64/-/node-int64-0.4.0.tgz#87a9065cdb355d3182d8f94ce11188b825c68a3b"
@@ -6490,6 +6520,11 @@ prompts@^2.0.1:
   dependencies:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
+
+propagate@^2.0.0:
+  version "2.0.1"
+  resolved "http://npm.lumigame.com/propagate/-/propagate-2.0.1.tgz#40cdedab18085c792334e64f0ac17256d38f9a45"
+  integrity sha512-vGrhOavPSTz4QVNuBNdcNXePNdNMaO1xj9yBeH1ScQPjk/rhg9sSlCXPhMkFuaNNW/syTvYqsnbIJxMBfRbbag==
 
 protobufjs@^7.2.3, protobufjs@^7.2.4:
   version "7.2.6"
@@ -6933,6 +6968,22 @@ sc-base-apis@2.0.0:
     sc-api-client "1.4.0"
     sc-common "1.8.1"
 
+sc-base-database@1.11.1:
+  version "1.11.1"
+  resolved "http://npm.lumigame.com/sc-base-database/-/sc-base-database-1.11.1.tgz#25d850e83b4e07f7e6e26f3d2d1eecc11145c2cf"
+  integrity sha512-DxuFRNDDSHQglSGFsXnrcDXVs+BRxSiILBNRbJ5RistCcSbs+k7QiwYMGhCSv3FOz9J/On9jh2y3MNst/he2BA==
+  dependencies:
+    mongoose "^5.9.25"
+    sc-common "1.8.1"
+
+sc-base-database@^1.11.3:
+  version "1.11.3"
+  resolved "http://npm.lumigame.com/sc-base-database/-/sc-base-database-1.11.3.tgz#2195179ed2ed795842fec2dfde77583598692d4c"
+  integrity sha512-XKtljkwuIQBYrfq3DpLrK+UIiUym4ex8Y3cy/CL88b3C0986w6xRo0mrAtUNoxGUury6IiU/uBKe2w4J/oKpfQ==
+  dependencies:
+    mongoose "^5.9.25"
+    sc-common "1.8.1"
+
 sc-common@1.8.1:
   version "1.8.1"
   resolved "http://npm.lumigame.com/sc-common/-/sc-common-1.8.1.tgz#c79e6131011b541baab8d775ff53b3b081ff8221"
@@ -6944,10 +6995,36 @@ sc-common@1.8.1:
     mongoose-long "^0.3.0"
     numeral "^2.0.6"
 
-sc-game-base@5.0.1-beta.4:
-  version "5.0.1-beta.4"
-  resolved "http://npm.lumigame.com/sc-game-base/-/sc-game-base-5.0.1-beta.4.tgz#bd0598decc3a76e9b2c7810c849cbf508401844c"
-  integrity sha512-Tlxz+1sLCI1NVD5i2ica5Xh7vPp3iOdEGVopQ3RkChSz6gK+7TICUE0FkN8vWhDluMifeQ7X5HJWaDYuSZ2A8g==
+sc-game-base@5.0.0:
+  version "5.0.0"
+  resolved "http://npm.lumigame.com/sc-game-base/-/sc-game-base-5.0.0.tgz#f4051db11140bf6478ec868b9fc4a1f51d267e5f"
+  integrity sha512-ldUaY6w0TmSJ8+WOqq088zPxDpsRa6ErPW/BlWwnTTWGd3/vFJg0GSN6G/j88LV82uv2FPcG9T+aakq3mRGirg==
+  dependencies:
+    awilix "^8.0.0"
+    axios "^1.0.0"
+    chance "^1.1.7"
+    cors "^2.8.5"
+    cron "^2.0.0"
+    express "^4.17.1"
+    helmet "^6.0.0"
+    lodash "^4.17.19"
+    mongoose "^5.9.25"
+    morgan "^1.10.0"
+    openid-client "^5.0.0"
+    sc-base-apis "2.0.0"
+    sc-base-database "1.11.1"
+    sc-common "1.8.1"
+    sc-game-management-client "^0.0.2-beta.22"
+    sc-instrument "1.1.1-beta.2"
+    sc-instrument-helper "1.0.0"
+    socket.io "^4.5.4"
+    socket.io-msgpack-parser "^3.0.1"
+    socket.io-prom-metrics "^1.0.3"
+
+sc-game-base@5.0.1-beta.5:
+  version "5.0.1-beta.5"
+  resolved "http://npm.lumigame.com/sc-game-base/-/sc-game-base-5.0.1-beta.5.tgz#1583f142565ec5c92554d49c230a461572f22fb6"
+  integrity sha512-NmHPlq7n/2fm0BOMv1OotqDXRDKRFV6qFlzVYgKBXrY+2saBAul1KZO2GgCsTIsrmdiWYp7GTPVcmdwPY2Oa6g==
   dependencies:
     awilix "^8.0.0"
     axios "^1.0.0"
@@ -6983,6 +7060,16 @@ sc-game-management-client@^0.0.2-beta.22:
     axios "1.6.2"
     axios-retry "^4.0.0"
 
+sc-game-service-integration-utils@^2.0.0:
+  version "2.0.0"
+  resolved "http://npm.lumigame.com/sc-game-service-integration-utils/-/sc-game-service-integration-utils-2.0.0.tgz#14fa0fafead68be98fd51b4b8f49048f5b50d07f"
+  integrity sha512-jlKvrPibGyYXMYTjnxZHZJQ0GoDA3odeE/sIoocTHi6pm/NlF+u+tEw1ElTWJJCiEpr+0Kj0VYytrc/BzlTTHg==
+  dependencies:
+    lodash.matches "^4.6.0"
+    nock "^13.2.1"
+    sc-game-base "5.0.0"
+    socket.io-client "^4.4.0"
+
 sc-instrument-helper@1.0.0:
   version "1.0.0"
   resolved "http://npm.lumigame.com/sc-instrument-helper/-/sc-instrument-helper-1.0.0.tgz#c00cf6b76bc51574cb9b909c3f148914a6648066"
@@ -7012,10 +7099,10 @@ sc-instrument@1.1.1-beta.2:
     opentelemetry-instrumentation-socket.io "0.34.0"
     socket.io "4.6.1"
 
-sc-number-game-base@1.0.0-beta.47:
-  version "1.0.0-beta.47"
-  resolved "http://npm.lumigame.com/sc-number-game-base/-/sc-number-game-base-1.0.0-beta.47.tgz#259879f3208539489077f903817167ccd5b35af4"
-  integrity sha512-TV20QRR+7n6O4ObAtIWpY0OMgtoCaeBQdgUEB2PvzOenidv8wmHhsk8jVKlDAqTVJjcZytH320t4LmbBSErsAQ==
+sc-number-game-base@1.0.0-beta.48:
+  version "1.0.0-beta.48"
+  resolved "http://npm.lumigame.com/sc-number-game-base/-/sc-number-game-base-1.0.0-beta.48.tgz#042d876b53d64f1e603ec207a50a0ddc9e75dbaa"
+  integrity sha512-fq9sDJB91yR2QiqZaUlW+5PFPpcQVPJz3K0uwOcbCG8o/Cqvh8i/lIUUsG8SYzQ6KG8525z5kKijasfW0f/7qA==
   dependencies:
     chance "1.1.6"
     crypto "^1.0.1"
@@ -7026,7 +7113,7 @@ sc-number-game-base@1.0.0-beta.47:
     random-js "^2.1.0"
     randomstring "^1.3.0"
     sc-common "1.8.1"
-    sc-game-base "5.0.1-beta.4"
+    sc-game-base "5.0.1-beta.5"
     sc-pf-client-seed "1.0.1-beta.0"
     socket.io-prom-metrics "1.0.3"
 
@@ -7234,6 +7321,16 @@ socket.io-adapter@~2.5.2:
   dependencies:
     debug "~4.3.4"
     ws "~8.11.0"
+
+socket.io-client@^4.4.0:
+  version "4.7.4"
+  resolved "http://npm.lumigame.com/socket.io-client/-/socket.io-client-4.7.4.tgz#5f0e060ff34ac0a4b4c5abaaa88e0d1d928c64c8"
+  integrity sha512-wh+OkeF0rAVCrABWQBaEjLfb7DVPotMbu0cgWgyR0v6eA4EoVnAwcIeIbcdTE3GT/H3kbdLl7OoH2+asoDRIIg==
+  dependencies:
+    "@socket.io/component-emitter" "~3.1.0"
+    debug "~4.3.2"
+    engine.io-client "~6.5.2"
+    socket.io-parser "~4.2.4"
 
 socket.io-msgpack-parser@^3.0.1:
   version "3.0.2"
@@ -8070,6 +8167,11 @@ xmlchars@^2.2.0:
   version "2.2.0"
   resolved "http://npm.lumigame.com/xmlchars/-/xmlchars-2.2.0.tgz#060fe1bcb7f9c76fe2a17db86a9bc3ab894210cb"
   integrity sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==
+
+xmlhttprequest-ssl@~2.0.0:
+  version "2.0.0"
+  resolved "http://npm.lumigame.com/xmlhttprequest-ssl/-/xmlhttprequest-ssl-2.0.0.tgz#91360c86b914e67f44dce769180027c0da618c67"
+  integrity sha512-QKxVRxiRACQcVuQEYFsI1hhkrMlrXHPegbbd1yn9UHOmRxY+si12nQYzri3vbzt8VdTTRviqcKxcyllFas5z2A==
 
 xorshift@^1.1.1:
   version "1.2.0"
