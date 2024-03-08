@@ -32,9 +32,9 @@ export const finalHashToNumber = (finalHash: string) => {
 
 export const getSettlementResult = (result: DrawResult) => {
     return {
-        player: result.player > result.banker,
-        banker: result.banker > result.player,
-        tie: result.player === result.banker,
+        player: +result.player > +result.banker,
+        banker: +result.banker > +result.player,
+        tie: +result.player === +result.banker,
     };
 };
 
