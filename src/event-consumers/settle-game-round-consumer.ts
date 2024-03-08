@@ -2,13 +2,6 @@ import { EventConsumers } from "sc-number-game-base";
 import { BET_CHOICES } from "../constants";
 
 export default class SettleGameRoundConsumer extends EventConsumers.SettleGameRoundConsumer {
-    async settleRound() {
-        try {
-            await super.settleRound();
-        } catch (e) {
-            console.log("SettleGameRound", e);
-        }
-    }
     calculateBetResult(settlementResult: any, bet: any, odds: Record<string, number>) {
         const betResult = Object.entries(settlementResult).reduce(
             (result, [choice, win]) => {
