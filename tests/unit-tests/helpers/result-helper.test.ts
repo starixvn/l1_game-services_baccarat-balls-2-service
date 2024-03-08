@@ -1,6 +1,10 @@
 import { generateResult } from "../../../src/helpers/result-helper";
 import { ServerSeedHelper } from "sc-game-base/src/core/helpers";
 
+jest.mock("sc-game-base/src/core/helpers", () => ({
+    ServerSeedHelper: { generateServerSeed: jest.fn().mockReturnValue("123asd") },
+}));
+
 describe("GenerateResult tests", () => {
     it("should return expected", () => {
         // arrange
