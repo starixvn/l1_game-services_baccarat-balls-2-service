@@ -2,19 +2,9 @@ import { asClass, asValue } from "awilix";
 import { bets, rounds, tmpBets, betLogs, results } from "./models/index";
 import { ContainerRegistry } from "sc-number-game-base";
 import { InGameConsumer, PlaceBetConsumer, RoundResultConsumer, SettleGameRoundConsumer } from "./event-consumers";
-import { GameDefinition, GameData } from "sc-game-base/src/core";
 import RunningRoundInfoPublisher from "./event-publishers/running-round-info-publisher";
 
 export default class BaccaratBallsContainerRegistry extends ContainerRegistry {
-    register(appConfigs: any, definition: GameDefinition, gameData: GameData) {
-        super.register(appConfigs, definition, gameData);
-
-        this.container.register({
-            maxCombinedClientSeeds: asValue(5),
-        });
-
-        return this.container;
-    }
     registerModels() {
         super.registerModels();
 
