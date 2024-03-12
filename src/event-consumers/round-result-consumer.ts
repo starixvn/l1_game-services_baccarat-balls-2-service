@@ -1,22 +1,11 @@
 import { EventConsumers } from "sc-number-game-base";
-import { SeedHelper, ServerSeedHelper } from "sc-game-base/src/core/helpers";
+import { ServerSeedHelper } from "sc-game-base/src/core/helpers";
 import { SERVER_SEED_SECRET_LENGTH, TOTAL_BALLS } from "../constants";
 import { generateRemainingBalls, getRandomIndex } from "sc-number-game-base/dist/helpers";
 import { DrawResult } from "../models/rounds";
 
 export default class RoundResultConsumer extends EventConsumers.RoundResultConsumer {
-    async generateServerSeedAndPublishHash() {
-        const serverSeed = this.generateSeverSeed();
-        const serverSeedHash = SeedHelper.getSHA256Hash(serverSeed);
-
-        this.gameData.pf = { ...this.gameData.pf, serverSeed, serverSeedHash };
-
-        await this.createResultRecord(serverSeed, serverSeedHash);
-
-        this.roundResultPublisher.publishServerSeedHash();
-    }
-
-    generateSeverSeed() {
+    generateServerSeed() {
         const { randomMode } = this.gameData.gameConfigs;
         const { roundResult } = this.gameData;
         const totalDrawnBalls: number = roundResult.length ?? 0;
