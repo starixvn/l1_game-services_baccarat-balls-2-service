@@ -55,4 +55,5 @@ export default {
     gameManagementApiSettings: {
         BASE: "http://gn-game-management-service-local-service:5000",
     },
+    disableCors: true,
 };
