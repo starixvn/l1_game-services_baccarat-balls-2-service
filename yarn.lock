@@ -7052,6 +7052,37 @@ sc-game-base@5.0.1-beta.8:
     socket.io-msgpack-parser "^3.0.1"
     socket.io-prom-metrics "^1.0.3"
 
+sc-game-base@5.0.1-beta.9:
+  version "5.0.1-beta.9"
+  resolved "http://npm.lumigame.com/sc-game-base/-/sc-game-base-5.0.1-beta.9.tgz#38fe013b3b509d9fd253fba16c4dccf34f358cd2"
+  integrity sha512-0+86Y1iMpBVdOaLOncY4JxTQyHIKAElKzKc3rIyuL55KyC7bFfIoGlaQcLAj4mKuFLKI67KyEl7FL4jsUksYWw==
+  dependencies:
+    awilix "^8.0.0"
+    axios "^1.0.0"
+    chance "^1.1.7"
+    cors "^2.8.5"
+    cron "^2.0.0"
+    crypto "^1.0.1"
+    crypto-random-string "^5.0.0"
+    express "^4.17.1"
+    helmet "^6.0.0"
+    lodash "^4.17.19"
+    mongoose "^5.9.25"
+    morgan "^1.10.0"
+    nanoid "^5.0.5"
+    openid-client "^5.0.0"
+    random-js "^2.1.0"
+    randomstring "^1.3.0"
+    sc-base-apis "2.0.0"
+    sc-common "1.8.1"
+    sc-game-management-client "^0.0.2-beta.22"
+    sc-instrument "1.1.1-beta.2"
+    sc-instrument-helper "1.0.0"
+    sc-pf-client-seed "^1.0.1-beta.0"
+    socket.io "^4.5.4"
+    socket.io-msgpack-parser "^3.0.1"
+    socket.io-prom-metrics "^1.0.3"
+
 sc-game-management-client@^0.0.2-beta.22:
   version "0.0.2-beta.22"
   resolved "http://npm.lumigame.com/sc-game-management-client/-/sc-game-management-client-0.0.2-beta.22.tgz#3bf20fd2b3b0ec12b65b385e3a65da69ba7c8609"
@@ -7099,10 +7130,10 @@ sc-instrument@1.1.1-beta.2:
     opentelemetry-instrumentation-socket.io "0.34.0"
     socket.io "4.6.1"
 
-sc-number-game-base@1.0.0-beta.68:
-  version "1.0.0-beta.68"
-  resolved "http://npm.lumigame.com/sc-number-game-base/-/sc-number-game-base-1.0.0-beta.68.tgz#472f274e054fa864dfea8861d6babcac157c6498"
-  integrity sha512-TSk1iZTOGELx+GZzQ74fZiJzHvk7YpSFIC5YLhbminjcqcA1qkcJHQNCl9xXvgzTrQKCzcXGfaqKy1lpiP3Ubw==
+sc-number-game-base@1.0.0-beta.69:
+  version "1.0.0-beta.69"
+  resolved "http://npm.lumigame.com/sc-number-game-base/-/sc-number-game-base-1.0.0-beta.69.tgz#9c95befa0c9b533894c874d70654b5eb83db8e9d"
+  integrity sha512-6SwjIJaP1wp5QafeOxutIYubGu3qF08thMLyD9bZF3L+AIB1U/vRe/gEIWZfo+lBoPcG1bmiknTMYDdtwZWHYg==
   dependencies:
     chance "1.1.6"
     crypto "^1.0.1"
@@ -7113,7 +7144,7 @@ sc-number-game-base@1.0.0-beta.68:
     random-js "^2.1.0"
     randomstring "^1.3.0"
     sc-common "1.8.1"
-    sc-game-base "5.0.1-beta.8"
+    sc-game-base "5.0.1-beta.9"
     sc-pf-client-seed "1.0.1-beta.0"
     socket.io-prom-metrics "1.0.3"
 
