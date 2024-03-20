@@ -12,6 +12,7 @@ const resultSchema = new mongoose.Schema<DrawResult>(
         drawId: { type: Number, require: true },
         player: { type: Number, required: true },
         banker: { type: Number, required: true },
+        time: { type: Date, default: new Date() },
     },
     {
         _id: false,
