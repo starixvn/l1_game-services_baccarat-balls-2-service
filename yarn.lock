@@ -2344,6 +2344,11 @@
   resolved "http://npm.lumigame.com/@types/range-parser/-/range-parser-1.2.7.tgz#50ae4353eaaddc04044279812f52c8c65857dbcb"
   integrity sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==
 
+"@types/sc-game-base@^1.0.0-beta.0":
+  version "1.0.0-beta.0"
+  resolved "http://npm.lumigame.com/@types/sc-game-base/-/sc-game-base-1.0.0-beta.0.tgz#00b1173f427dd76b7f9ee4303342d4a765a28b4b"
+  integrity sha512-E4qIVTnW9C7ZAXPaYnPtPRlE7D9HAtdyf/CU9dT8YJYtK+9GZRgRiUMgNZdmFeDlS9yCTRiNNlcHRcVlQJe08A==
+
 "@types/send@*":
   version "0.17.4"
   resolved "http://npm.lumigame.com/@types/send/-/send-0.17.4.tgz#6619cd24e7270793702e4e6a4b958a9010cfc57a"
@@ -7099,10 +7104,10 @@ sc-instrument@1.1.1-beta.2:
     opentelemetry-instrumentation-socket.io "0.34.0"
     socket.io "4.6.1"
 
-sc-number-game-base@1.0.0-beta.77:
-  version "1.0.0-beta.77"
-  resolved "http://npm.lumigame.com/sc-number-game-base/-/sc-number-game-base-1.0.0-beta.77.tgz#d2973241f2e7d10b8c3e6f67819875b39548b8d6"
-  integrity sha512-wXB3FAvWqxdnN6MZyxZQEYMK8lBxU3QNDsshT6b1FjkDTxa8L+cm3Tg+8ngGp3XoT4+omBuFmNf94ws6WIHRgA==
+sc-number-game-base@1.0.0-beta.78:
+  version "1.0.0-beta.78"
+  resolved "http://npm.lumigame.com/sc-number-game-base/-/sc-number-game-base-1.0.0-beta.78.tgz#385ac5092846d6d0c62c41b246cb5e52813484ce"
+  integrity sha512-gkg+3dY2CrO+Q5NrnuTnvkZWdXMQ4FFRn9CIELzKrklxYwxAtj/1JvGPnyCZAW2qvse8WejDnFwoVN4ef3Q3PA==
   dependencies:
     chance "1.1.6"
     crypto "^1.0.1"
