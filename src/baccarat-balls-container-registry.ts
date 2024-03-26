@@ -2,7 +2,7 @@ import { asClass, asValue } from "awilix";
 import { bets, rounds, tmpBets, betLogs, results } from "./models/index";
 import { ContainerRegistry } from "sc-number-game-base";
 import { InGameConsumer, RoundResultConsumer, SettleGameRoundConsumer } from "./event-consumers";
-import RunningRoundInfoPublisher from "./event-publishers/running-round-info-publisher";
+import { RunningRoundInfoPublisher, GameStatusPublisher } from "./event-publishers";
 
 export default class BaccaratBallsContainerRegistry extends ContainerRegistry {
     registerModels() {
@@ -31,6 +31,7 @@ export default class BaccaratBallsContainerRegistry extends ContainerRegistry {
 
         this.container.register({
             runningRoundInfoPublisher: asClass(RunningRoundInfoPublisher).singleton(),
+            gameStatusPublisher: asClass(GameStatusPublisher).singleton(),
         });
     }
 }

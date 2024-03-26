@@ -1,15 +1,15 @@
 import { Helpers } from "sc-number-game-base";
 
 const MinProbability = {
-    player: 2346 / (72 * 72),
-    banker: 2346 / (72 * 72),
-    tie: 69 / (72 * 72),
+    player: 0.3786008230452675,
+    banker: 0.3786008230452675,
+    tie: 0.03292181069958848,
 };
 
 const MaxProbability = {
-    player: 2769 / (72 * 72),
-    banker: 2769 / (72 * 72),
-    tie: 1 / 72,
+    player: 0.588477366255144,
+    banker: 0.588477366255144,
+    tie: 0.037037037037037035,
 };
 
 export const calculateOddsRange = (margin?: Record<string, number>[]) => {
