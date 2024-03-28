@@ -2778,6 +2778,11 @@ binary-extensions@^2.0.0:
   resolved "http://npm.lumigame.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
+bintrees@1.0.2:
+  version "1.0.2"
+  resolved "http://npm.lumigame.com/bintrees/-/bintrees-1.0.2.tgz#49f896d6e858a4a499df85c38fb399b9aff840f8"
+  integrity sha1-SfiW1uhYpKSZ34XDj7OZua/4QPg=
+
 bl@^2.2.1:
   version "2.2.1"
   resolved "http://npm.lumigame.com/bl/-/bl-2.2.1.tgz#8c11a7b730655c5d56898cdc871224f40fd901d5"
@@ -6506,6 +6511,13 @@ process@^0.10.0:
   resolved "http://npm.lumigame.com/process/-/process-0.10.1.tgz#842457cc51cfed72dc775afeeafb8c6034372725"
   integrity sha1-hCRXzFHP7XLcd1r+6vuMYDQ3JyU=
 
+prom-client@^11.2.1:
+  version "11.5.3"
+  resolved "http://npm.lumigame.com/prom-client/-/prom-client-11.5.3.tgz#5fedfce1083bac6c2b223738e966d0e1643756f8"
+  integrity sha512-iz22FmTbtkyL2vt0MdDFY+kWof+S9UB/NACxSn2aJcewtw+EERsen0urSkZ2WrHseNdydsvcxCTAnPcSMZZv4Q==
+  dependencies:
+    tdigest "^0.1.1"
+
 prompts@^2.0.1:
   version "2.4.2"
   resolved "http://npm.lumigame.com/prompts/-/prompts-2.4.2.tgz#7b57e73b3a48029ad10ebd44f74b01722a4cb069"
@@ -7014,10 +7026,10 @@ sc-game-base@5.0.0:
     socket.io-msgpack-parser "^3.0.1"
     socket.io-prom-metrics "^1.0.3"
 
-sc-game-base@5.0.1-beta.15:
-  version "5.0.1-beta.15"
-  resolved "http://npm.lumigame.com/sc-game-base/-/sc-game-base-5.0.1-beta.15.tgz#d7408426175831592319f2bc88e1563d8f9644ab"
-  integrity sha512-qn3LmWoj5U0ma4SbJjBhOjqoLeQ+637DwwRuWACBwsjIXNBN/r5wwycx3lB0en+b+RQxcydufpb0gxHlc84r8g==
+sc-game-base@5.0.1-beta.16:
+  version "5.0.1-beta.16"
+  resolved "http://npm.lumigame.com/sc-game-base/-/sc-game-base-5.0.1-beta.16.tgz#5291bb51492c31fdb9ba762bd270b965413f9060"
+  integrity sha512-5N4H5KLfsOfFrfd1DrIZFO75O0qlTVBFkGFjRuFph5NOsf3rDvLZVRm3bd1kwibXmfwtpoDVxDGGgFt09ILMVw==
   dependencies:
     awilix "^8.0.0"
     axios "^1.0.0"
@@ -7033,6 +7045,7 @@ sc-game-base@5.0.1-beta.15:
     morgan "^1.10.0"
     nanoid "^5.0.5"
     openid-client "^5.0.0"
+    prom-client "^11.2.1"
     random-js "^2.1.0"
     randomstring "^1.3.0"
     sc-base-apis "2.0.0"
@@ -7092,10 +7105,10 @@ sc-instrument@1.1.1-beta.2:
     opentelemetry-instrumentation-socket.io "0.34.0"
     socket.io "4.6.1"
 
-sc-number-game-base@1.0.0-beta.82:
-  version "1.0.0-beta.82"
-  resolved "http://npm.lumigame.com/sc-number-game-base/-/sc-number-game-base-1.0.0-beta.82.tgz#9fbf621d6b12e6502879bea8516e78dd49a3c3c7"
-  integrity sha512-AVtz9pX9q5DdwLbKsallSiw4sVdeqOkNVcmiw2NHb70lAXc8IzcWk5BIyaFok+cjZ4UzpMAUbabybjq5LeTbkA==
+sc-number-game-base@1.0.0-beta.83:
+  version "1.0.0-beta.83"
+  resolved "http://npm.lumigame.com/sc-number-game-base/-/sc-number-game-base-1.0.0-beta.83.tgz#f2b91e1136760489481d38bd08b8243b013c0d7c"
+  integrity sha512-oyZYweaYhyTn5Y80ZsoGJZbwT1r/EGmFbqBe0d4gsJarQy/4PvvwOcdKD+HxbgTsuAN9EkfA9W5Lcx5JMoHJDA==
   dependencies:
     awilix "^8.0.0"
     chance "1.1.6"
@@ -7107,7 +7120,7 @@ sc-number-game-base@1.0.0-beta.82:
     random-js "^2.1.0"
     randomstring "^1.3.0"
     sc-common "1.8.1"
-    sc-game-base "5.0.1-beta.15"
+    sc-game-base "5.0.1-beta.16"
     sc-pf-client-seed "1.0.1-beta.0"
     socket.io "^4.5.4"
     socket.io-prom-metrics "^1.0.3"
@@ -7605,6 +7618,13 @@ symbol-tree@^3.2.4:
   version "3.2.4"
   resolved "http://npm.lumigame.com/symbol-tree/-/symbol-tree-3.2.4.tgz#430637d248ba77e078883951fb9aa0eed7c63fa2"
   integrity sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==
+
+tdigest@^0.1.1:
+  version "0.1.2"
+  resolved "http://npm.lumigame.com/tdigest/-/tdigest-0.1.2.tgz#96c64bac4ff10746b910b0e23b515794e12faced"
+  integrity sha512-+G0LLgjjo9BZX2MfdvPfH+MKLCrxlXSYec5DaPYP1fe6Iyhf0/fSmJ0bFiZ1F8BT6cGXl2LpltQptzjXKWEkKA==
+  dependencies:
+    bintrees "1.0.2"
 
 terminal-link@^2.0.0:
   version "2.1.1"
