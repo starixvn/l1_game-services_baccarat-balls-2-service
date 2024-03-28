@@ -31,7 +31,7 @@ export default {
         },
     },
     sentry: {
-        sentryUrl: "https://d039f2abe16b4252a70cdf60fff232b6@10.2.190.51:9009/282",
+        sentryUrl: "http://d039f2abe16b4252a70cdf60fff232b6@10.2.190.51:9009/282",
         logIdentifier: "BaccaratBall1",
         env: "SIT",
     },
