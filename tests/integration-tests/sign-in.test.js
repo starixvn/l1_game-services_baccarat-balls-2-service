@@ -14,20 +14,19 @@ const socketOptions = socketOptionsFunc(appConfigs.hostingPort);
 
 describe("signin", () => {
     it("check connect", (done) => {
-        checkConnect(processId,appConfigs,socketOptions, done);
+        checkConnect(processId, appConfigs, socketOptions, done);
     });
 
     it("should receive signed in response", async () => {
         //Arrange & Act
         const client = new GameClientDriver(socketOptions, initUserSession(normalUser));
 
-        setTimeout(() => {
+        setInterval(() => {
             client.sendSignInEvent();
-        }, 1000);
+        }, 500);
 
         // Act
         await client.handleSignedInEvent();
         client.close();
-
-    },5000);
+    }, 5000);
 });

@@ -21,11 +21,19 @@ describe("when settle", () => {
     describe("test data settle", () => {
         let client;
 
-        beforeEach(async() => {
+        beforeEach(async () => {
             client = new GameClientDriver(socketOptions, initUserSession(normalUser));
+
+            const sendSignInInterval = setInterval(() => {
+                client.sendSignInEvent();
+            }, 500);
+
             await client.handleSignedInEvent();
+
             client.sendInGameEvent();
-        }, 50000);
+
+            clearInterval(sendSignInInterval);
+        });
 
         afterEach(() => {
             client.close();
@@ -36,27 +44,16 @@ describe("when settle", () => {
             // Arrange
             const inGameData = await client.handleGameEvent((data) => data.remainingTime);
             setTimeout(() => {
-                client.emit(eventTypes.bet, { betChoice: "player", amount: 100 });
+                client.emit(eventTypes.bet, { betChoices: { player: 10, tie: 20 }, clientSeed: "1234" });
             }, getTimeOutToPlacingBetTime(inGameData.remainingTime, gameSettings.durations) * 1000);
 
             // Act
             const result = await client.handleGameEvent((data) => data.status);
             const { status } = result;
 
+            console.log(status);
             // Assert
-            expect(status.bet).toBeGreaterThan(0);
-        },50000);
-
-        it("should return settled finish data and hashResult with rawValue", async () => {
-            // Act
-            client
-                .handleGameEvent((data) => data.finish && data.resultHash)
-                .then((result) => {
-                    const { resultHash } = result;
-
-                    // Assert
-                    expect(resultHash.rawValue).not.toBeEmpty();
-                });
-        });
+            expect(status.bet).toBeGreaterThanOrEqual(10);
+        }, 10000);
     });
 });

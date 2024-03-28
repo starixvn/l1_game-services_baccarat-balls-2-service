@@ -2,6 +2,8 @@ import fs from "fs";
 import appConfigs from "../../../build/app-configs.IGT";
 import { currencyData, socketOptionsFunc } from "./test-data";
 import { GameClientDriver, normalUser, eventTypes } from "sc-game-service-integration-utils";
+import { GameData, GameDefinition, Helpers } from "sc-number-game-base";
+import gameSettings from "./game-settings";
 
 export const checkConnect = (processId, appConfigs, socketOptions, callback) => {
     const normalUserClientDriver = new GameClientDriver(socketOptions, initUserSession(normalUser));
@@ -37,13 +39,15 @@ export const buildConfigs = (processId) => {
 };
 
 export const getTimeOutToPlacingBetTime = (remainingTime, durations) => {
+    remainingTime = Helpers.getCurrentTimeOfTurn(remainingTime, durations.wholeTurn, gameSettings.numberOfTurnsPerRound);
+
     let timeout = 0;
     if (remainingTime <= durations.lockingBet) {
         timeout = remainingTime + durations.wholeTurn - durations.placingBets + 2;
     } else if (remainingTime >= durations.placingBets) {
         timeout = remainingTime - durations.placingBets + 1;
     }
-
+    
     return timeout;
 };
 
