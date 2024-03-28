@@ -1,13 +1,13 @@
-import gameSettings from "../../../src/game-settings";
+import gameSettings from "../../../build/game-settings";
 
 export default Object.assign(gameSettings, {
     durations: {
-        wholeRound: 8,
+        wholeRound: 26,
         placingBets: 4,
         lockingBet: 1,
         showingResult: 1,
         wholeTurn: 6,
         startingRound: 2,
     },
-    numberOfTurnsPerRound: 1,
+    numberOfTurnsPerRound: 4,
 });

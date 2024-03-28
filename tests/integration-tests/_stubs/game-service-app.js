@@ -1,13 +1,13 @@
 import { GameData, GameDefinition } from "sc-number-game-base";
 import { Core } from "sc-game-base";
 import { initAPIStub, stubUserService, subGameManagementService } from "sc-game-service-integration-utils";
-import ContainerRegistry from "../../../../sc-number-game-base/src/container-registry";
+import BaccaratBallsContainerRegistry from "../../../build/baccarat-balls-container-registry";
 
 import gameSettings from "./game-settings";
-import { resultHelper } from "../../../src/helpers";
+import { resultHelper } from "../../../build/helpers";
 import { buildConfigs } from "./helper";
 
-export const run = async (processId: string, overrideAppConfigs: any) => {
+export const run = async (processId, overrideAppConfigs) => {
     const appConfigs = Object.assign({}, buildConfigs(processId), overrideAppConfigs);
     initAPIStub(appConfigs.apiSettings.apiUrl);
     const definition = new GameDefinition(
@@ -20,7 +20,7 @@ export const run = async (processId: string, overrideAppConfigs: any) => {
     const gameData = new GameData(gameSettings.durations.wholeRound);
     stubUserService(appConfigs);
     subGameManagementService(appConfigs, definition);
-    const container = new ContainerRegistry().register(appConfigs, definition, gameData);
+    const container = new BaccaratBallsContainerRegistry().register(appConfigs, definition, gameData);
     const app = new Core.BaseGameApp(gameSettings.name, appConfigs);
     await app.run();
     await app.startGame(container);

@@ -1,9 +1,10 @@
 import { GameClientDriver, normalUser, eventTypes } from "sc-game-service-integration-utils";
-import gameSettings from "../../src/game-settings";
+import gameSettings from "./_stubs/game-settings";
 import { startService } from "./_stubs/test-jobs";
 import { getProcessId, buildConfigs, getTimeOutToPlacingBetTime, initUserSession, checkConnect } from "./_stubs/helper";
 import { socketOptionsFunc } from "./_stubs/test-data";
 const path = require("path");
+
 const scriptName = path.basename(__filename);
 const processId = getProcessId(scriptName);
 const overrideGameConfigs = { botenabled: false };
@@ -14,18 +15,17 @@ const socketOptions = socketOptionsFunc(appConfigs.hostingPort);
 
 describe("when settle", () => {
     it("check connect", (done) => {
-        checkConnect(processId, done);
+        checkConnect(processId, appConfigs, socketOptions, done);
     });
 
     describe("test data settle", () => {
-        let client: any;
-        const JEST_ASSERT_WAITING_RESPONSE_TIMEOUT = 5000000;
+        let client;
 
-        beforeEach(async () => {
+        beforeEach(async() => {
             client = new GameClientDriver(socketOptions, initUserSession(normalUser));
             await client.handleSignedInEvent();
             client.sendInGameEvent();
-        }, JEST_ASSERT_WAITING_RESPONSE_TIMEOUT);
+        }, 50000);
 
         afterEach(() => {
             client.close();
@@ -34,18 +34,29 @@ describe("when settle", () => {
 
         it("should return settled status data", async () => {
             // Arrange
-
-            const inGameData = await client.handleGameEvent((data: any) => data.remainingTime);
+            const inGameData = await client.handleGameEvent((data) => data.remainingTime);
             setTimeout(() => {
                 client.emit(eventTypes.bet, { betChoice: "player", amount: 100 });
             }, getTimeOutToPlacingBetTime(inGameData.remainingTime, gameSettings.durations) * 1000);
 
             // Act
-            const result = await client.handleGameEvent((data: any) => data.status);
+            const result = await client.handleGameEvent((data) => data.status);
             const { status } = result;
 
             // Assert
             expect(status.bet).toBeGreaterThan(0);
+        },50000);
+
+        it("should return settled finish data and hashResult with rawValue", async () => {
+            // Act
+            client
+                .handleGameEvent((data) => data.finish && data.resultHash)
+                .then((result) => {
+                    const { resultHash } = result;
+
+                    // Assert
+                    expect(resultHash.rawValue).not.toBeEmpty();
+                });
         });
     });
 });

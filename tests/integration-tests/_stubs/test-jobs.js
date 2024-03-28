@@ -1,11 +1,9 @@
 import { spawn } from "child_process";
 
-export const startSetupDataProcess = (processId: any, overrideGameConfigs: {}, onSetupDataDone: { (): void; (): any }) => {
-    const setupDataProcess = spawn("cmd.exe", [
-        "/s",
-        "/c",
-        "tsx",
-        "./tests/integration-tests/_stubs/test-data-setup.ts",
+export const startSetupDataProcess = (processId, overrideGameConfigs, onSetupDataDone) => {
+    const setupDataProcess = spawn("node", [
+        "--experimental-loader=extensionless",
+        "./tests/integration-tests/_stubs/test-data-setup.js",
         "-pid",
         `${processId}`,
         `${JSON.stringify(overrideGameConfigs)}`,
@@ -27,18 +25,19 @@ export const startSetupDataProcess = (processId: any, overrideGameConfigs: {}, o
     return setupDataProcess;
 };
 
-export const startServiceProcess = (processId: any, overrideAppConfigs: {}, onServiceStarted: { (): void; (): any }) => {
-    const serviceProcess = spawn("cmd.exe", [
-        "/s",
-        "/c",
-        "tsx",
-        "./tests/integration-tests/_stubs/game-service-app.ts",
+export const startServiceProcess = (processId, overrideAppConfigs, onServiceStarted) => {
+    const serviceProcess = spawn("node", [
+        "--experimental-loader=extensionless",
+        "./tests/integration-tests/_stubs/game-service-app.js",
         "-pid",
         `${processId}`,
         `${JSON.stringify(overrideAppConfigs)}`,
+        {
+            stdio: ["pipe", "pipe", "pipe", "ipc"],
+        },
     ]);
 
-    serviceProcess.stdout.on("data", (data: string | string[]) => {
+    serviceProcess.stdout.on("data", (data) => {
         console.log(`stdout: ${data}`);
 
         if (data && data.includes("Express server started and running on")) {
@@ -46,15 +45,15 @@ export const startServiceProcess = (processId: any, overrideAppConfigs: {}, onSe
         }
     });
 
-    serviceProcess.stderr.on("data", (data: any) => {
+    serviceProcess.stderr.on("data", (data) => {
         console.log(`stderr: ${data}`);
     });
 
     return serviceProcess;
 };
 
-export const startService = (processId: any, overrideGameConfigs = {}, overrideAppConfigs = {}) => {
-    let processStartService: any;
+export const startService = (processId, overrideGameConfigs = {}, overrideAppConfigs = {}) => {
+    let processStartService;
     const JEST_ASSERT_WAITING_RESPONSE_TIMEOUT = 50000;
     beforeAll((done) => {
         startSetupDataProcess(processId, overrideGameConfigs, () => {

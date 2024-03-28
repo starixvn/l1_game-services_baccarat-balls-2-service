@@ -16,7 +16,7 @@ const Schema = new mongoose.Schema({
         currency: { type: String },
 
         operatorId: { type: String },
-        playerId: { type: Number },
+        playerId: { type: String },
         playerName: { type: String },
     },
     facebook: {

@@ -1,15 +1,13 @@
 import fs from "fs";
-import appConfigs from "../../../src/app-configs.IGT";
+import appConfigs from "../../../build/app-configs.IGT";
 import { currencyData, socketOptionsFunc } from "./test-data";
 import { GameClientDriver, normalUser, eventTypes } from "sc-game-service-integration-utils";
 
-export const checkConnect = (processId: any, callback?: any) => {
-    const appConfigs = buildConfigs(processId);
-    const socketOptions = socketOptionsFunc(appConfigs.hostingPort);
+export const checkConnect = (processId, appConfigs, socketOptions, callback) => {
     const normalUserClientDriver = new GameClientDriver(socketOptions, initUserSession(normalUser));
     normalUserClientDriver.on(eventTypes.connectError, () => {
         setTimeout(() => {
-            checkConnect(callback);
+            checkConnect(processId, appConfigs, socketOptions, callback);
         }, 1000);
     });
     normalUserClientDriver.on(eventTypes.connect, () => {
@@ -18,7 +16,7 @@ export const checkConnect = (processId: any, callback?: any) => {
     });
 };
 
-export const getProcessId = (testFileName: string) => {
+export const getProcessId = (testFileName) => {
     const filePaths = fs
         .readdirSync("./tests/integration-tests", { withFileTypes: true })
         .filter((file) => file.isFile() && file.name.includes(".test."))
@@ -30,7 +28,7 @@ export const getProcessId = (testFileName: string) => {
     return processId;
 };
 
-export const buildConfigs = (processId: any) => {
+export const buildConfigs = (processId) => {
     const copyConfigs = JSON.parse(JSON.stringify(appConfigs));
     copyConfigs.database.options.dbName = `game-service-test-db-${processId}`;
     copyConfigs.hostingPort = 5000 + parseInt(processId);
@@ -38,7 +36,7 @@ export const buildConfigs = (processId: any) => {
     return copyConfigs;
 };
 
-export const getTimeOutToPlacingBetTime = (remainingTime: number, durations: any) => {
+export const getTimeOutToPlacingBetTime = (remainingTime, durations) => {
     let timeout = 0;
     if (remainingTime <= durations.lockingBet) {
         timeout = remainingTime + durations.wholeTurn - durations.placingBets + 2;
@@ -49,7 +47,7 @@ export const getTimeOutToPlacingBetTime = (remainingTime: number, durations: any
     return timeout;
 };
 
-export const getTimeOutToSettleTime = (remainingTime: number, durations: { placingBets: number }) => {
+export const getTimeOutToSettleTime = (remainingTime, durations) => {
     let timeout = 0;
     if (remainingTime <= durations.placingBets) {
         timeout = remainingTime + 1.5;
@@ -58,7 +56,7 @@ export const getTimeOutToSettleTime = (remainingTime: number, durations: { placi
     return timeout;
 };
 
-export const getTimeOutToBetInvalid = (remainingTime: number, durations: { lockingBet: number; placingBets: number }) => {
+export const getTimeOutToBetInvalid = (remainingTime, durations) => {
     let timeout = 0;
     if (remainingTime >= durations.lockingBet && remainingTime <= durations.placingBets) {
         timeout = remainingTime - durations.lockingBet + 1;
@@ -67,7 +65,7 @@ export const getTimeOutToBetInvalid = (remainingTime: number, durations: { locki
     return timeout;
 };
 
-export const initUserSession = (user: typeof normalUser) => {
+export const initUserSession = (user) => {
     return {
         session: `${user.playerId}-session-id`,
         ss: `${user.playerId}-session-id`,

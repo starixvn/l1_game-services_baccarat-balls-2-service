@@ -9,6 +9,11 @@ export default Object.assign(appConfigs, {
         useAuthenticate: false,
         audiences: ["api", "admin-api"],
     },
+    sentry: {
+        sentryUrl: "https://3711f3082699411a8716a3221ca1fd9e@sentry.lumigame.com/89",
+        logIdentifier: "BacBall-integration-test",
+        env: "LOCAL",
+    },
     database: {
         url: "mongodb://0.0.0.0:27017",
         options: {

@@ -12,11 +12,11 @@ import {
     normalUser,
 } from "sc-game-service-integration-utils";
 
-import { bets, rounds, betLogs } from "../../../src/models";
-import { currencyData, game, gameConfig, roundsData, userBetData, promotions as promotionData, userBetLogData } from "./test-data";
+import { bets, rounds, betLogs, results } from "../../../build/models";
+import { currencyData, game, gameConfig, roundsData, userBetData, promotions as promotionData, userBetLogData, pfResults } from "./test-data";
 import { buildConfigs } from "./helper";
 
-const connectDatabase = async (processId: any) => {
+const connectDatabase = async (processId) => {
     const appConfigs = buildConfigs(processId);
     await middlewares.database.configureDatabase(mongoose, appConfigs.database);
 
@@ -31,7 +31,7 @@ const clearAllData = async () => {
     }
 };
 
-export const createTestData = async (processId: string, overrideGameConfigs: any) => {
+export const createTestData = async (processId, overrideGameConfigs) => {
     const finalGameConfig = Object.assign({}, gameConfig, overrideGameConfigs);
     await connectDatabase(processId);
     await createExchangeRate();
@@ -42,6 +42,7 @@ export const createTestData = async (processId: string, overrideGameConfigs: any
     await createCurrencyGroupGames(currency.groupId, game.id, finalGameConfig);
     await createDummyUsers(currency);
     await createRounds();
+    await createPfResults();
     await createUserBetData();
     await createUserBetLogData();
     await createPromotionData();
@@ -50,13 +51,17 @@ export const createTestData = async (processId: string, overrideGameConfigs: any
     process.exit(0);
 };
 
-const getUserId = async (playerId: number) => {
+const getUserId = async (playerId) => {
     const user = await users.findOne({ "local.playerId": playerId }, { _id: true }).lean();
     return user._id.toString();
 };
 
 const createRounds = async () => {
     return rounds.insertMany(roundsData);
+};
+
+const createPfResults = async () => {
+    return results.insertMany(pfResults);
 };
 
 const createUserBetData = async () => {
