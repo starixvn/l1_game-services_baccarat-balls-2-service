@@ -31,8 +31,8 @@ export default {
         },
     },
     sentry: {
-        sentryUrl: "https://81e47b9ef0c34ab08c30a8612d9a348e@sentry.lumigame.com/85",
-        logIdentifier: "BaccaratBall1",
+        sentryUrl: "https://3711f3082699411a8716a3221ca1fd9e@sentry.lumigame.com/89",
+        logIdentifier: "BacBall1",
         env: "LOCAL",
     },
     authenticateSettings: {

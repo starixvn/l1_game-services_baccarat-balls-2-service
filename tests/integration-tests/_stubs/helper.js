@@ -32,7 +32,8 @@ export const getProcessId = (testFileName) => {
 
 export const buildConfigs = (processId) => {
     const copyConfigs = JSON.parse(JSON.stringify(appConfigs));
-    copyConfigs.database.options.dbName = `game-service-test-db-${processId}`;
+    const gameName = gameSettings.name.toLowerCase();
+    copyConfigs.database.options.dbName = `${gameName}-test-db-${processId}`;
     copyConfigs.hostingPort = 5000 + parseInt(processId);
 
     return copyConfigs;
