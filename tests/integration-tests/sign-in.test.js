@@ -21,12 +21,15 @@ describe("signin", () => {
         //Arrange & Act
         const client = new GameClientDriver(socketOptions, initUserSession(normalUser));
 
-        setInterval(() => {
+        const sendSignInInterval =  setInterval(() => {
             client.sendSignInEvent();
         }, 500);
 
         // Act
         await client.handleSignedInEvent();
+
+        clearInterval(sendSignInInterval);
+        
         client.close();
     }, 5000);
 });

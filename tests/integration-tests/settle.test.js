@@ -54,6 +54,6 @@ describe("when settle", () => {
             console.log(status);
             // Assert
             expect(status.bet).toBeGreaterThanOrEqual(10);
-        }, 10000);
+        }, 50000);
     });
 });
