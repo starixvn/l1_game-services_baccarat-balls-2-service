@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const modelName = "bacball1_rounds";
+const modelName = "bacball2_rounds";
 
 export type DrawResult = {
     drawId: number;

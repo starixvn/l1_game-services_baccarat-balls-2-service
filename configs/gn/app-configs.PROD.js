@@ -22,7 +22,7 @@ export default {
     },
     enabledLogs: true,
     database: {
-        url: "mongodb://lmn_backend:Q74~T0vK6%25gMO%3AII%60L%5DMxc%2CR%5E%28IhxpAt@10.99.99.53:39410,10.99.99.54:39410,10.99.99.188:39410,10.99.99.187:39410/?replicaSet=SN-Main&appName=BaccaratBall1",
+        url: "mongodb://lmn_backend:Q74~T0vK6%25gMO%3AII%60L%5DMxc%2CR%5E%28IhxpAt@10.99.99.53:39410,10.99.99.54:39410,10.99.99.188:39410,10.99.99.187:39410/?replicaSet=SN-Main&appName=BaccaratBall2",
         options: {
             dbName: "minigame",
             useNewUrlParser: true,
@@ -32,7 +32,7 @@ export default {
     },
     sentry: {
         sentryUrl: "http://f457113be82441879a991096fce8c26c@10.2.189.50:9009/172",
-        logIdentifier: "BaccaratBall1",
+        logIdentifier: "BaccaratBall2",
         env: "prod",
     },
     authenticateSettings: {
