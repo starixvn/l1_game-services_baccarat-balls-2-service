@@ -1,8 +1,14 @@
+import { BacBall } from "@rd/numbers-game-probabilities";
 import * as Helpers from "../../../src/helpers/result-helper";
 import { ServerSeedHelper } from "sc-game-base/src/core/helpers";
 
 jest.mock("sc-game-base/src/core/helpers", () => ({
     ServerSeedHelper: { generateServerSeed: jest.fn().mockReturnValue("123asd") },
+}));
+
+jest.mock("@rd/numbers-game-probabilities", () => ({
+    ...jest.requireActual("@rd/numbers-game-probabilities"),
+    BacBall: { getProbabilities: jest.fn() },
 }));
 
 describe("helpers tests", () => {
@@ -78,6 +84,34 @@ describe("helpers tests", () => {
 
             // Assert
             expect(actual).toEqual(settlementResult);
+        });
+    });
+
+    describe("getProbabilities", () => {
+        it("should return expected", () => {
+            // arrange
+            const roundResult = [
+                {
+                    player: 10,
+                    banker: 15,
+                    drawId: 1,
+                },
+                {
+                    player: 18,
+                    banker: 5,
+                    drawId: 2,
+                },
+                {
+                    player: 20,
+                    banker: 20,
+                    drawId: 3,
+                },
+            ];
+            // act
+            Helpers.getProbabilities(roundResult);
+
+            // assert
+            expect(BacBall.getProbabilities).toHaveBeenCalledWith([10, 18, 20], [15, 5, 20]);
         });
     });
 });
